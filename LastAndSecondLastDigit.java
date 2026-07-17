@@ -5,5 +5,6 @@ public class LastAndSecondLastDigit {
         int n = sc.nextInt();
         System.out.println(n % 10);         
         System.out.println((n / 10) % 10);  
+        sc.close();
     }
 }

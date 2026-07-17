@@ -1,15 +1,16 @@
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class MajorityElement {
     public static void main(String[] args) {
-        int[] arr = {1, 1, 2, 1, 3, 5, 1};
+        int[] arr = {1,2,4,3,2,1,2};
         int majorSize = arr.length / 2;
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int num : arr) {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
         int res = -1;
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        for (Entry<Integer, Integer> entry : map.entrySet()) {
             if (entry.getValue() > majorSize) {
                 res = entry.getKey();
                 break;
