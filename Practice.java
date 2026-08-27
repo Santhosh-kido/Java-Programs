@@ -2,27 +2,16 @@
 public class Practice {
     public static void main(String[] args) {
 
-        int[] arr = { 1, 2, 3, 4, 5 };
-        int n = arr.length;
-        int target = 9;
-        int left = 0, right = n - 1;
-        while (left < right) {
-            int sum = arr[left] + arr[right];
-
-            if (sum == target) {
-                break;
-            } else if (sum < target) {
+        int[] arr = {1,1,2,2,3,3,4,4,5,5};
+        int left =0;
+        for(int i=1;i<arr.length;i++){
+            if(arr[left]!=arr[i]){
                 left++;
-            } else {
-                right--;
+                arr[left] = arr[i];
             }
         }
-        if (left < right) {
-            System.out.println("[" + arr[left] + ", " + arr[right] + "]");
-        } else {
-            System.out.println("No pair found");
+        for(int i=0;i<=left;i++){
+            System.out.print(arr[i]+" ");
         }
-
     }
-
 }
