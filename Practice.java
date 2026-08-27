@@ -1,24 +1,28 @@
-import java.util.Scanner;
 
-class Practice {
-
+public class Practice {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); 
-            int k = Integer.parseInt(sc.nextLine());
-            int n = Integer.parseInt(sc.nextLine());
-            int count = 0;
-            int number = 1;
-            while (true) {
-                if (number % k == 0 ||
-                        Integer.toString(number).contains(Integer.toString(k))) {
-                    count++;
-                    if (count == n) {
-                        System.out.println(number);
-                        break;
-                    }
-                }
-                number++;
+
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int n = arr.length;
+        int target = 9;
+        int left = 0, right = n - 1;
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+
+            if (sum == target) {
+                break;
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
             }
-        
+        }
+        if (left < right) {
+            System.out.println("[" + arr[left] + ", " + arr[right] + "]");
+        } else {
+            System.out.println("No pair found");
+        }
+
     }
+
 }
