@@ -17,7 +17,7 @@ public class TwoSum {
             } else if (sum < target)
                 left++;
             else
-                right++;
+                right--;
         }
     }
 }
